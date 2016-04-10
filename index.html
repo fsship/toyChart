@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Charts Test</title>
+    <script type="text/javascript" src="./build/chart.min.js"></script>
+</head>
+<body>
+    <div id="test" style="width: 500px;height: 350px"></div>
+    <script type="text/javascript">
+        var chart = new Chart('#test');
+        chart.draw({
+            type: 'bar',
+            data: [
+                {
+                    text: 'A',
+                    value: 1
+                },{
+                    text: 'B',
+                    value: 3
+                },{
+                    text: 'C',
+                    value: 2
+                }
+            ]
+        });
+    </script>
+</body>
+</html>
