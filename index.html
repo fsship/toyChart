@@ -5,24 +5,45 @@
     <title>Charts Test</title>
     <script type="text/javascript" src="./build/chart.min.js"></script>
 </head>
+<style>
+    .chart {
+        width: 500px;
+        height: 350px;
+        float: left;
+        margin: 5px;
+    }
+</style>
 <body>
-    <div id="test" style="width: 500px;height: 350px"></div>
+    <div id="testBar" class="chart"></div>
+    <div id="testLine" class="chart"></div>
+    <div id="testPie" class="chart"></div>
     <script type="text/javascript">
-        var chart = new Chart('#test');
-        chart.draw({
+        var chartBar = new Chart('#testBar');
+        var chartLine = new Chart('#testLine');
+        var chartPie = new Chart('#testPie');
+        var data = [
+            {
+                text: 'A',
+                value: 1
+            },{
+                text: 'B',
+                value: 3
+            },{
+                text: 'C',
+                value: 2
+            }
+        ];
+        chartBar.draw({
             type: 'bar',
-            data: [
-                {
-                    text: 'A',
-                    value: 1
-                },{
-                    text: 'B',
-                    value: 3
-                },{
-                    text: 'C',
-                    value: 2
-                }
-            ]
+            data: data
+        });
+        chartLine.draw({
+            type: 'line',
+            data: data
+        });
+        chartPie.draw({
+            type: 'pie',
+            data: data
         });
     </script>
 </body>
